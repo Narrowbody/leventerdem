@@ -1,0 +1,129 @@
+---
+import AstroIcon from '../components/AstroIcon.astro';
+import helicopter from '../../public/helicopter.svg';
+---
+
+<div class='ops'><h2>Areas of Operations</h2></div>
+<section class='box skills'>
+	<div class='stack gap-2 lg:gap-4'>
+		<h2>
+			<AstroIcon
+				icon='terminal-window'
+				color='var(--accent-regular)'
+				size='2.5rem'
+				gradient
+			/>
+			Airlines
+		</h2>
+		<p>Scheduled and Cargo airlines</p>
+	</div>
+
+	<div class='stack gap-2 lg:gap-4'>
+		<h2>
+			<img src={helicopter.src} alt='image description' /><AstroIcon
+				icon='helicopter'
+				color='var(--accent-regular)'
+				size='2.5rem'
+				gradient
+			/>
+			Helicopter Ops
+		</h2>
+		<p>HEMS, SAR, Fire Fighting</p>
+	</div>
+
+	<div class='stack gap-2 lg:gap-4'>
+		<h2>
+			<AstroIcon
+				icon='strategy'
+				color='var(--accent-regular)'
+				size='2.5rem'
+				gradient
+			/>
+			Airports
+		</h2>
+		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+	</div>
+
+	<div class='stack gap-2 lg:gap-4'>
+		<h2>
+			<AstroIcon
+				icon='terminal-window'
+				color='var(--accent-regular)'
+				size='2.5rem'
+				gradient
+			/>
+			Ground Services
+		</h2>
+		<p>
+			Ground Operations including, Ground Handling, Ground Support
+			Equipment (GSE), Dangerous Goods Handling
+		</p>
+	</div>
+
+	<div class='stack gap-2 lg:gap-4'>
+		<h2>
+			<AstroIcon
+				icon='trophy'
+				color='var(--accent-regular)'
+				size='2.5rem'
+				gradient
+			/>
+			MRO's
+		</h2>
+		<p>Maintenance Repair Organizations, CAMO, Part M, Part 145 and</p>
+	</div>
+
+	<div class='stack gap-2 lg:gap-4'>
+		<h2>
+			<AstroIcon
+				icon='strategy'
+				color='var(--accent-regular)'
+				size='2.5rem'
+				gradient
+			/>
+			Military Aviation
+		</h2>
+		<p>Urna porttitor rhoncus dolor purus non enim praesent ornare.</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 50em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>
