@@ -1,0 +1,16 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import RFP from '../components/RFP.astro'
+---
+<BaseLayout title="Request Quotation" description="Request quotation for a project or training">
+<div class="stack gap-20">
+		<main class="wrapper about">
+   <Hero
+				title="Request for Quotation"
+				tagline="Please fill this form to request a price quotation for a project or training."
+			>
+    <RFP />  
+  </main>
+  </div>
+</BaseLayout>

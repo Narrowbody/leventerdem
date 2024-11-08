@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import ContactCTA from '../../components/ContactCTA.astro';
+import CoursesPreview from '../../components/CoursesPreview.astro';
+import Hero from '../../components/Hero.astro';
+import Grid from '../../components/Grid.astro';
+
+const courses = (await getCollection('courses')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+);
+---
+
+<BaseLayout
+	title='Training Offered | Levent Erdem'
+	description='Learn about courses Levent can offer and teach'>
+	<div class='stack gap-20'>
+		<main class='wrapper stack gap-8'>
+			<Hero
+				title='Training I can provide'
+				tagline='Below are some of the different types of courses I conduct...'
+				align='start'
+			/>
+			<Grid variant='offset'>
+				{
+					courses.map((course) => (
+						<li>
+							<CoursesPreview courses={course} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+		<ContactCTA titleForCTA='Interested in a course?' />
+	</div>
+</BaseLayout>
