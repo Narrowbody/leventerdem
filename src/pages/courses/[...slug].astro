@@ -1,4 +1,6 @@
 ---
+/* export const prerender = false; */
+
 import { type CollectionEntry, getCollection } from 'astro:content';
 import { getEntry } from 'astro:content';
 
@@ -13,12 +15,15 @@ interface Props {
 	entry: CollectionEntry<'courses'>;
 }
 
-// This is a dynamic route that generates a page for every Markdown file in src/content/
-// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
-// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
-export const prerender = true;
+/* export async function getStaticPaths() {
+	const courses = await getCollection('courses');
+	return courses.map((entry) => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}));
+} */
 
-export async function getStaticPaths() {
+export async function GET() {
 	const courses = await getCollection('courses');
 	return courses.map((entry) => ({
 		params: { slug: entry.slug },
@@ -30,6 +35,7 @@ const { slug } = Astro.params;
 if (slug === undefined) {
 	throw new Error('Slug is required');
 }
+
 const entry = await getEntry('courses', slug);
 if (entry === undefined) {
 	return Astro.redirect('/404');

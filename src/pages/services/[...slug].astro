@@ -1,5 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
+import { getEntry } from 'astro:content';
 
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ContactCTA from '../../components/ContactCTA.astro';
@@ -10,13 +11,7 @@ interface Props {
 	entry: CollectionEntry<'services'>;
 }
 
-// This is a dynamic route that generates a page for every Markdown file in src/content/
-// Read more about dynamic routes and this `getStaticPaths` function in the Astro docs:
-// https://docs.astro.build/en/core-concepts/routing/#dynamic-routes
-
-export const prerender = true;
-
-export async function getStaticPaths() {
+export async function GET() {
 	const services = await getCollection('services');
 	return services.map((entry) => ({
 		params: { slug: entry.slug },
@@ -24,7 +19,16 @@ export async function getStaticPaths() {
 	}));
 }
 
-const { entry } = Astro.props;
+const { slug } = Astro.params;
+if (slug === undefined) {
+	throw new Error('Slug is required');
+}
+
+const entry = await getEntry('services', slug);
+if (entry === undefined) {
+	return Astro.redirect('/404');
+}
+
 const { Content } = await entry.render();
 ---
 
