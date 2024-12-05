@@ -160,7 +160,7 @@ const courses = (await getCollection('courses'))
 						<h3>Services</h3>
 						<p>
 							Below, you will find some of the services and
-							projects I provided for my clients during the past
+							projects I delivered for my clients during the past
 							few years;
 						</p>
 					</header>
@@ -194,7 +194,7 @@ const courses = (await getCollection('courses'))
 <script src='../scripts/animate-scroll.js'></script>
 
 <style>
-	.hidden {
+	/* 	.hidden {
 		opacity: 0;
 		transition: all 5s;
 	}
@@ -211,7 +211,7 @@ const courses = (await getCollection('courses'))
 		width: 100%;
 		display: flex;
 		flex-direction: column;
-	}
+	} */
 
 	.hero {
 		display: flex;
@@ -224,9 +224,9 @@ const courses = (await getCollection('courses'))
 		display:;
 	}
 
-	.roles a {
+	/* 	.roles a {
 		text-decoration: none;
-	}
+	} */
 
 	.hero img {
 		aspect-ratio: 5 / 4;
@@ -253,7 +253,7 @@ const courses = (await getCollection('courses'))
 
 		.hero img {
 			aspect-ratio: 1 / 1;
-			border-radius: 4.5rem;
+			border-radius: 0.5rem;
 			object-fit: cover;
 		}
 	}
@@ -298,6 +298,10 @@ const courses = (await getCollection('courses'))
 		max-width: 50ch;
 		font-size: var(--text-md);
 		color: var(--gray-300);
+	}
+
+	.section-header h3 {
+		font-size: var(--text-2xl);
 	}
 
 	@media (min-width: 50em) {
