@@ -1,0 +1,82 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "experience",
+      "previewPath": "'experience'",
+      "pageBundle": false,
+      "clearEmpty": true,
+      "fields": []
+    },
+    {
+      "name": "services",
+      "previewPath": "'services'",
+      "pageBundle": false,
+      "clearEmpty": true,
+      "fields": []
+    },
+    {
+      "name": "courses",
+      "previewPath": "'courses'",
+      "pageBundle": false,
+      "clearEmpty": true,
+      "fields": []
+    },
+    {
+      "name": "about",
+      "previewPath": "'about'",
+      "pageBundle": false,
+      "clearEmpty": true,
+      "fields": []
+    }
+  ],
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.publicFolder": {
+    "path": "src/assets",
+    "relative": true
+  },
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "src\\content",
+      "path": "[[workspace]]"
+    },
+    {
+      "title": "experience",
+      "path": "[[workspace]]/src/content/experience",
+      "contentTypes": [
+        "experience"
+      ]
+    },
+    {
+      "title": "services",
+      "path": "[[workspace]]/src/content/services",
+      "contentTypes": [
+        "services"
+      ]
+    },
+    {
+      "title": "courses",
+      "path": "[[workspace]]/src/content/courses",
+      "contentTypes": [
+        "courses"
+      ]
+    },
+    {
+      "title": "about",
+      "path": "[[workspace]]/src/content/about",
+      "contentTypes": [
+        "about"
+      ]
+    },
+    {
+      "title": "data",
+      "path": "[[workspace]]/src/data"
+    },
+    {
+      "title": "content",
+      "path": "[[workspace]]/src/content"
+    }
+  ],
+  "frontMatter.git.enabled": true
+}
