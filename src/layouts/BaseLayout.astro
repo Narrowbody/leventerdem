@@ -26,13 +26,6 @@ const { title, description } = Astro.props;
 			<Footer />
 		</div>
 
-		<script>
-			// Add “loaded” class once the document has completely loaded.
-			addEventListener('load', () =>
-				document.documentElement.classList.add('loaded')
-			);
-		</script>
-
 		<style>
 			:root {
 				--_placeholder-bg: linear-gradient(transparent, transparent);
@@ -121,5 +114,11 @@ const { title, description } = Astro.props;
 				}
 			}
 		</style>
+		<script>
+			// Add “loaded” class once the document has completely loaded.
+			addEventListener('load', () =>
+				document.documentElement.classList.add('loaded')
+			);
+		</script>
 	</body>
 </html>
